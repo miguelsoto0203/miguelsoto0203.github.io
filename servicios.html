@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PLAYER MUSIC</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <header>
+        <div class="content">
+            <div class="menu container">
+                <a href="index.html" class="logo"></a>
+                <img src="images.logo2.png" class="logo-icono" alt="">
+                <input type="checkbox" id="menu"/>
+                <label for="menu">
+                    <img src="images.menu.png" class="menu-icono" alt="">
+                </label>
+                <nav class="navbar">
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="servicios.html">Servicios</a></li>
+                        <li><a href="contactos.html">Contactos</a></li>
+                        <li><a href="productos.html">Productos</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+        </div>
+        <h1>Servicios</h1>
+        <h2>¿Tenes Alguna Duda?</h2>
+    </header>
+
+    
+    <h3>
+       <p>En el caso que tengas duda en cuanto al reproductor,
+       te proporcionamos este medio, para que puedas consultar.</p>
+       <p>Nuestros desarrolladores estaran dispuestos a solucionar sus dudas</p>
+    </h3>
+<section id="servicios">
+   <div class="contenedor">
+      
+       
+       <!-- Barra de búsqueda -->
+       <div class="barra-busqueda">
+           <input type="text" id="buscar" placeholder="¿Como Podemos Ayudarte?...">
+           <button onclick="buscarServicio()">Consultar</button>
+       </div>
+
+       <!-- Lista de servicios (ejemplo) -->
+       <div class="servicios-lista">
+           <div class="servicio">Consultoría IT</div>
+           <button> <li><a href="soporte.html">Soporte</a></li> </button>
+           
+       </div>
+   </div>
+</section>
+
+<script>
+   // Función para filtrar los servicios según la búsqueda
+   function buscarServicio() {
+       const query = document.getElementById('buscar').value.toLowerCase();
+       const servicios = document.querySelectorAll('.servicio');
+       servicios.forEach(servicio => {
+           const servicioNombre = servicio.textContent.toLowerCase();
+           if (servicioNombre.includes(query)) {
+               servicio.style.display = 'block';
+           } else {
+               servicio.style.display = 'none';
+           }
+       });
+   }
+</script>
+</body>
+</html>
